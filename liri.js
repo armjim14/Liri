@@ -2,19 +2,11 @@ var axios = require("axios");
 var Spotify = require('node-spotify-api');
 
 var Where = process.argv[2];
-var info = process.argv[3];
-var info2 = process.argv[4];
-var info3 = process.argv[5];
-var info4 = process.argv[6];
+var gett = process.argv.slice(3);
+var info = "";
 
-if (typeof info2 !== "undefined"){
-    info = info + " " + info2;
-    if (typeof info3 !== "undefined" ){
-        info = info + " " + info3;
-        if (typeof info4 !== "undefined" ){
-            info = info + " " + info4;
-        }
-    } 
+for (e in gett){
+    info += gett[e] + " ";
 }
 
 switch(Where){
