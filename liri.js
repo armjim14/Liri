@@ -1,4 +1,6 @@
 var axios = require("axios");
+var Spotify = require('node-spotify-api');
+
 var Where = process.argv[2];
 var info = process.argv[3];
 var info2 = process.argv[4];
@@ -22,6 +24,9 @@ switch(Where){
     case "concert":
         getconcert();
         break
+    case "song":
+        getsong();
+        break;
     default: break
 }
 
@@ -74,15 +79,23 @@ function getconcert(){
     })
 }
 
-// fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
-//   method: "GET",
-//   headers: {
-//     Authorization: `Bearer ${userAccessToken}`     
-//   }
-// })
-// .then(response => response.json())
-// .then(({beats})) => {
-//   beats.forEach((beat, index) => {
-//     console.log(`Beat ${index} starts at ${beat.start}`);
-//   })
-// }
+function getsong() {
+    var spotify = new Spotify({
+        id: "aae181ff8f3b4139867cdd9c3809b2c8",
+        secret: "b2f2b0943d224c948e42edcdf89da630"
+      });
+
+    spotify.search({type: "track", query: info}, function(err, data){
+        if (err){
+            return console.log('Error occurred: ' + err);
+        }
+        var better = data.tracks.items
+
+        for (e in better){
+        console.log(`Artist Name: ${better[e].album.artists[0].name}`);
+        console.log(`Album Name: ${better[e].album.name}`);
+        console.log(`Released date: ${better[e].album.release_date}`);
+        console.log("");
+        }
+    })
+}
