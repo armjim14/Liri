@@ -2,12 +2,7 @@ var axios = require("axios");
 var Spotify = require('node-spotify-api');
 
 var Where = process.argv[2];
-var gett = process.argv.slice(3);
-var info = "";
-
-for (e in gett){
-    info += gett[e] + " ";
-}
+var info = process.argv.slice(3).join(" ");
 
 switch(Where){
     case "movie":
@@ -53,7 +48,7 @@ function getconcert(){
 
     axios.get(link).then(function (res){
         
-        var all = res.data
+        var all = res.data;
 
         if ( all.length == 0 ){
             return console.log("There are no upcomming concerts")
