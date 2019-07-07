@@ -1,0 +1,1 @@
+[object Object][object Object]{"one":"Artist Name: 3 Doors Down","two":"Album Name: Acoustic Back Porch Jam","three":"Released date: 2019-02-06"}

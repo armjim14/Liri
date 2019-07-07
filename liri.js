@@ -1,5 +1,6 @@
 var axios = require("axios");
 var Spotify = require('node-spotify-api');
+var fs = require("fs");
 
 var Where = process.argv[2];
 var info = process.argv.slice(3).join(" ");
@@ -78,11 +79,35 @@ function getsong() {
         }
         var better = data.tracks.items
 
-        for (e in better){
-        console.log(`Artist Name: ${better[e].album.artists[0].name}`);
-        console.log(`Album Name: ${better[e].album.name}`);
-        console.log(`Released date: ${better[e].album.release_date}`);
-        console.log("");
+        var sendToFile = {
+            one: one,
+            two: two,
+            three, three
         }
+
+        for (e in better){
+            var one = `Artist Name: ${better[e].album.artists[0].name}`;
+            var two = `Album Name: ${better[e].album.name}`;
+            var three = `Released date: ${better[e].album.release_date}`;    
+            console.log(`Artist Name: ${better[e].album.artists[0].name}`);
+            console.log(`Album Name: ${better[e].album.name}`);
+            console.log(`Released date: ${better[e].album.release_date}`);
+            console.log("");
+            var sendToFile = {
+                one: one,
+                two: two,
+                three, three
+            }
+        }
+
+        fs.appendFile("spotifyInfo.txt", JSON.stringify(sendToFile), (err, data) => {
+
+            if (err){
+                return console.log(err);
+            }
+
+            console.log(`${data} send to spotifyInfo.txt`);
+        })
+
     })
 }
