@@ -21,7 +21,7 @@ function getmovie(){
 
     var link = "https://www.omdbapi.com/?t=" + info + "&apikey=trilogy"
 
-    axios.get(link).then(function (res){
+    axios.get(link).then( (res) => {
 
         var all = res.data;
         var title = all.Title;
@@ -46,7 +46,7 @@ function getconcert(){
 
     var link = "https://rest.bandsintown.com/artists/" + info + "/events?app_id=codingbootcamp"
 
-    axios.get(link).then(function (res){
+    axios.get(link).then( (res) => {
         
         var all = res.data;
 
@@ -72,9 +72,9 @@ function getsong() {
         secret: "b2f2b0943d224c948e42edcdf89da630"
       });
 
-    spotify.search({type: "track", query: info}, function(err, data){
+    spotify.search({type: "track", query: info}, (err, data) => {
         if (err){
-            return console.log('Error occurred: ' + err);
+            return console.log('Error: ' + err);
         }
         var better = data.tracks.items
 
