@@ -14,12 +14,12 @@
 # How the Spotify information looks
 ### when this runs it save some information in a separate file
 
-![Image for Spotify](spot.png)
+![Image for Spotify](spot.PNG)
 
 # How the Rest.Band information looks
 
-![Image for Spotify](band.png)
+![Image for Spotify](band.PNG)
 
 # How the Movie information looks
 
-![Image for Spotify](movie.png)
+![Image for Spotify](movie.PNG)
