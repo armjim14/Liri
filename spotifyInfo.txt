@@ -1,1 +1,2 @@
-[object Object][object Object]{"one":"Artist Name: 3 Doors Down","two":"Album Name: Acoustic Back Porch Jam","three":"Released date: 2019-02-06"}
+{"one":"Artist Name: The Rain Library","two":"Album Name: Rain White Noise Sounds","three":"Released date: 01-09-2017"}
+{"one":"Artist Name: The Rain Library","two":"Album Name: Rain White Noise Sounds","three":"Released date: 01-09-2017"}
