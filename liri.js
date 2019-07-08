@@ -81,6 +81,7 @@ function getsong() {
         for (e in better){
         console.log(`Artist Name: ${better[e].album.artists[0].name}`);
         console.log(`Album Name: ${better[e].album.name}`);
+        console.log(`Sporify URL: ${better[e].album.external_urls.spotify}`);
         console.log(`Released date: ${better[e].album.release_date}`);
         console.log("");
         }
