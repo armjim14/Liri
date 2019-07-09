@@ -7,7 +7,10 @@ var moment = require("moment");
 var keys = require("./keys.js");
 
 var Where = process.argv[2];
+// var where is to know what information we will pulling
+
 var info = process.argv.slice(3).join(" ");
+// var info I splice process.argv so if user uses spaces it will be one word because of .join(" ")
 
 switch(Where){
     case "movie":
@@ -79,14 +82,18 @@ function getsong() {
         if (err){
             return console.log('Error: ' + err);
         }
+
+        // all of the info i needeed was in here
         var better = data.tracks.items
 
+        // making an object to send to spotifyInfo.txt
         var sendToFile = {
             one: one,
             two: two,
             three, three
         }
 
+        // getting all results that var better gives us plus filtering it some more
         for (e in better){
             var one = `Artist Name: ${better[e].album.artists[0].name}`;
             var two = `Album Name: ${better[e].album.name}`;
@@ -102,6 +109,7 @@ function getsong() {
             }
         }
 
+        // adds first result to spotifyInfo.txt 
         fs.appendFile("spotifyInfo.txt", JSON.stringify(sendToFile)+os.EOL, (err) => {
 
             if (err){
