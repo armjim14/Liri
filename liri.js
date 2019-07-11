@@ -27,6 +27,10 @@ switch(Where){
 
 function getmovie(){
 
+    if (!info){
+        info = "Mr. Nobody";
+    }
+
     var link = "https://www.omdbapi.com/?t=" + info + "&apikey=trilogy"
 
     axios.get(link).then( (res) => {
@@ -75,6 +79,10 @@ function getconcert(){
 }
 
 function getsong() {
+
+    if (!info){
+        info = "The Sign by Ace of Base"
+    }
 
     var spotify = new Spotify(keys.spotify);
 

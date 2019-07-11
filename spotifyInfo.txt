@@ -2,3 +2,4 @@
 {"one":"Artist Name: John Mayer","two":"Album Name: The Search for Everything - Wave One","three":"Released date: 01-20-2017"}
 {"one":"Artist Name: 3 Doors Down","two":"Album Name: Acoustic Back Porch Jam","three":"Released date: 02-06-2019"}
 {"one":"Artist Name: Sister Sledge","two":"Album Name: We Are Family [Expanded]","three":"Released date: 02-15-1979"}
+{"one":"Artist Name: Cooltone Karaoke","two":"Album Name: Greatest Hits Karaoke: Ace of Base","three":"Released date: 09-05-2015"}
